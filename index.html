@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Placeholder</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="./css/style.css" />
+    <link rel="stylesheet" type="text/css" href="./css/bulma.css" />
+    <link rel="stylesheet" type="text/css" href="./css/bulma-divider.min.css" />
+    <script src="./js/render.js"></script>
+</head>
+
+<body>
+    <div class="columns is-centered m-0 p-0">
+        <div class="column is-one-third p-0">
+            <div id="header" class="p-4"></div>
+            <div id="card-list"></div>
+            <div id="footer" class="p-4">
+                <input>
+            </div>
+        </div>
+    </div>
+    <script>
+        renderTextCard({ body: "Test card!" });
+        renderImageCard({ src: "https://machin.dev/images/drawings/standing_whiteboard.jpg", alt: "Placeholder" });
+        renderTextCard({ body: "Test card being sent from me!", style: "to" });
+        renderTextCard({ body: "Maybe this is a response", style: "from" });
+        renderTextCard({ body: "Test card!", style: "to" });
+        renderTextCard({ body: "Test card! My name is Louis and guess what...\nSome more text aswell! Let me send some more, it might wrap to the next line.", style: "to" });
+        renderTextCard({ body: "Test card!", style: "from" });
+        var card_list = document.getElementById('card-list');
+        card_list.scrollTop = card_list.scrollHeight;
+    </script>
+</body>
+
+</html>

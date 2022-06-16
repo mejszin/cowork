@@ -1,0 +1,53 @@
+body {
+    overflow-y: hidden;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    min-height: 100vh;
+}
+
+#card-list {
+    height: calc(100vh - 48px - 72px);
+    overflow-y: scroll;
+    border: 1px solid black;
+}
+
+#header, #footer {
+    position: sticky;
+    display: flex;
+    justify-content: center;
+}
+
+#header {
+    height: 48px;
+}
+
+#footer {
+    height: 72px;
+}
+
+#footer input {
+    width: 100%;
+    padding: 4px 16px;
+    font-size: 1.2em;
+    border: 1px solid black;
+    border-radius: 32px;
+}
+
+input:focus {
+    outline: none;
+}
+
+.card.to {
+    background-color: white;
+    margin-left: 48px !important;
+}
+
+.card.from{
+    background-color: rgb(194, 236, 250);
+    margin-right: 48px !important;
+}
+
+div.card {
+    border: 1px solid black;
+}
