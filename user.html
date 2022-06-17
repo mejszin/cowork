@@ -40,13 +40,23 @@
                         button = document.createElement('button');
                         button.classList.add('button', 'is-primary');
                         button.innerText = project.alias;
-                        button.onclick = () => { redirect(`/project.html?&t=${token}&p=${project.id}`) };
+                        button.onclick = () => { redirect(`/project.html?&t=${token}&p=${project_id}`) };
                         card_list.appendChild(button);
                     })
                 }
             });
         }
-        assertToken(null, () => renderUserProjects(), () => console.log('Error'));
+        assertToken(
+            null, 
+            () => {
+                assertProject(
+                    null, 
+                    () => renderUserProjects(), 
+                    () => console.log('Project ID error')
+                )
+            }, 
+            () => console.log('Token error')
+        );
     </script>
 </body>
 
