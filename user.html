@@ -22,7 +22,9 @@
         async function renderUserProjects(token) {
             getUserProjects().then(projects => {
                 for (var i = 0; i < projects.length; i++) {
-                    console.log(projects[i]);
+                    getProject(projects[i]).then(project => {
+                        console.log(project);
+                    })
                 }
             });
         }
