@@ -48,13 +48,7 @@
         }
         assertToken(
             null, 
-            () => {
-                assertProject(
-                    null, 
-                    () => renderUserProjects(), 
-                    () => console.log('Project ID error')
-                )
-            }, 
+            () => renderUserProjects(), 
             () => console.log('Token error')
         );
     </script>
