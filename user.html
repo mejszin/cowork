@@ -21,7 +21,7 @@
     <script>
         function renderUserProjects(token) {
             getUserProjects(token).then(projects => {
-                for (var project_id of projects) {
+                for (var project_id in projects) {
                     console.log(project_id);
                 }
             });
