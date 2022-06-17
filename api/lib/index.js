@@ -212,8 +212,8 @@ app.get('/project/items/add', (req, res) => {
     console.log('/project/items/add', req.query);
     const { token, project_id } = req.query;
     var props = req.query;
-    delete props[token];
-    delete props[project_id];
+    delete props.token;
+    delete props.project_id;
     console.log('props=', props);
     if (methods.isToken(token)) {
         if (project_id in project_data) {
