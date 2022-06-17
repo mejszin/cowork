@@ -40,7 +40,7 @@
                         button = document.createElement('button');
                         button.classList.add('button', 'is-primary');
                         button.innerText = project.alias;
-                        button.onClick = () => { redirect(`/project.html?&t=${token}&p=${project.id}`) };
+                        button.onclick = () => { redirect(`/project.html?&t=${token}&p=${project.id}`) };
                         card_list.appendChild(button);
                     })
                 }
