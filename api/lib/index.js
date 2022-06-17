@@ -78,7 +78,7 @@ methods.createProject = (alias) => {
         id: project_id,
         alias: alias,
         users: [],
-        items: []
+        items: {}
     }
     return project_id;
 }
@@ -214,6 +214,7 @@ app.get('/project/items/add', (req, res) => {
     var props = req.query;
     delete props[token];
     delete props[project_id];
+    console.log('props=', props);
     if (methods.isToken(token)) {
         if (project_id in project_data) {
             var item_id = methods.createItem(token, project_id, props);
