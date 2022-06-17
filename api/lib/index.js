@@ -107,10 +107,12 @@ methods.addProjectUser = (token, project_id) => {
 }
 
 app.get('/ping', (req, res) => {
+    console.log('/ping', req.query);
     res.status(200).send('Pong!');
 });
 
 app.get('/user/get', (req, res) => {
+    console.log('/user/get', req.query);
     const { token } = req.query;
     if (methods.isToken(token)) {
         // Success
@@ -122,6 +124,7 @@ app.get('/user/get', (req, res) => {
 })
 
 app.get('/user/new', (req, res) => {
+    console.log('/user/new', req.query);
     const { alias } = req.query;
     if (alias != undefined) {
         var token = methods.createUser(alias);
@@ -135,6 +138,7 @@ app.get('/user/new', (req, res) => {
 });
 
 app.get('/user/projects/add', (req, res) => {
+    console.log('/user/projects/add', req.query);
     const { token, project_id } = req.query;
     if (methods.isToken(token)) {
         var success = methods.addProjectUser(token, project_id);
@@ -154,6 +158,7 @@ app.get('/user/projects/add', (req, res) => {
 });
 
 app.get('/user/projects/list', (req, res) => {
+    console.log('/user/projects/list', req.query);
     const { token } = req.query;
     if (methods.isToken(token)) {
         // Success
@@ -165,6 +170,7 @@ app.get('/user/projects/list', (req, res) => {
 });
 
 app.get('/project/new', (req, res) => {
+    console.log('/project/new', req.query);
     const { token, alias } = req.query;
     if (methods.isToken(token)) {
         if (alias != undefined) {
@@ -185,6 +191,7 @@ app.get('/project/new', (req, res) => {
 });
 
 app.get('/project/items/add', (req, res) => {
+    console.log('/project/items/add', req.query);
     const { token, project_id } = req.query;
     var props = req.query;
     delete props[token];
@@ -206,6 +213,7 @@ app.get('/project/items/add', (req, res) => {
 });
 
 app.get('/project/items/list', (req, res) => {
+    console.log('/project/items/list', req.query);
     const { token, project_id } = req.query;
     if (methods.isToken(token)) {
         if (project_id in project_data) {
