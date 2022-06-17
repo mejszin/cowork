@@ -4,6 +4,7 @@ body {
     padding: 0;
     background-color: white;
     min-height: 100vh;
+    user-select: none;
 }
 
 #card-list {
@@ -24,6 +25,10 @@ body {
 
 #footer {
     height: 72px;
+}
+
+.card {
+    box-shadow: none;
 }
 
 .card.to {
