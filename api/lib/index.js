@@ -98,8 +98,8 @@ methods.createItem = (token, project_id, props) => {
 
 methods.addProjectUser = (token, project_id) => {
     if (methods.isToken(token) && (project_id in project_data)) {
-        user_data[token].projects.add(project_id);
-        project_data[project_id].users.add(user_data[token].id);
+        user_data[token].projects.push(project_id);
+        project_data[project_id].users.push(user_data[token].id);
         return true;
     } else {
         return false;
