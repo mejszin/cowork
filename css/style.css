@@ -12,18 +12,15 @@ body {
     overflow-y: scroll;
 }
 
-#header, #footer {
-    position: sticky;
-    display: flex;
-    justify-content: center;
-}
-
 #header {
-    height: 64px;
-    background-color: #F54087;
+    min-height: 64px;
+    max-height: 64px;
 }
 
 #footer {
+    position: sticky;
+    display: flex;
+    justify-content: center;
     height: 96px;
 }
 
