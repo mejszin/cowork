@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Placeholder</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="./css/bulma.css" />
+    <link rel="stylesheet" type="text/css" href="./css/bulma-divider.min.css" />
+    <script src="./lib/authenticate.js"></script>
+    <script src="./lib/api.js"></script>
+</head>
+</head>
+
+<body>
+    <div class="columns is-centered m-0 p-0">
+        <div class="column is-one-third p-0">
+            <div id="card-list"></div>
+        </div>
+    </div>
+    <script>
+        function renderUserProjects(token) {
+            getUserProjects(token).then(projects => {
+                for (var project_id of projects) {
+                    console.log(project_id);
+                }
+            });
+        }
+        assertToken(null, (t) => { renderUserProjects() }, redirect());
+    </script>
+</body>
+
+</html>
