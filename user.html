@@ -19,14 +19,14 @@
         </div>
     </div>
     <script>
-        function renderUserProjects(token) {
-            getUserProjects(token).then(projects => {
+        async function renderUserProjects(token) {
+            getUserProjects().then(projects => {
                 for (var project_id in projects) {
                     console.log(project_id);
                 }
             });
         }
-        assertToken(null, (t) => renderUserProjects(t), () => console.log('Error'));
+        assertToken(null, () => renderUserProjects(), () => console.log('Error'));
     </script>
 </body>
 
