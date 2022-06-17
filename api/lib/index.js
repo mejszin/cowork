@@ -118,8 +118,8 @@ app.get('/user/get', (req, res) => {
         // Success
         res.status(200).send(user_data[token]);
     } else {
-        // Bad request
-        res.status(400).send();
+        // Unauthorized
+        res.status(401).send();
     }
 })
 
@@ -168,6 +168,24 @@ app.get('/user/projects/list', (req, res) => {
         res.status(401).send();
     }
 });
+
+app.get('/project/get', (req, res) => {
+    console.log('/project/get', req.query);
+    const { token, project_id } = req.query;
+    if (methods.isToken(token)) {
+        if (methods.isProject(project_id)) {
+            // Success
+            res.status(200).send(project_data[project_id]);
+        } else {
+            // Missing data
+            res.status(204).send();
+        }
+        
+    } else {
+        // Unauthorized
+        res.status(401).send();
+    }
+})
 
 app.get('/project/new', (req, res) => {
     console.log('/project/new', req.query);
