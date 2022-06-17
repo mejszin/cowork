@@ -33,8 +33,17 @@
                 }
             });
         }
-        assertToken(null, () => renderProjectItems(), () => console.log('Error'));
-    </script>
+        assertToken(
+            null, 
+            () => {
+                assertProject(
+                    null, 
+                    () => renderProjectItems(), 
+                    () => console.log('Project ID error')
+                )
+            }, 
+            () => console.log('Token error')
+        );    </script>
 </body>
 
 </html>
