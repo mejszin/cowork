@@ -1,0 +1,19 @@
+API routes
+
+  /project/new           Done
+  /project/items/add     Done
+  /project/items/list    Done
+
+  /user/new              Done
+  /user/projects/add     Done
+  /user/projects/list    Done
+
+API values
+
+  user_id
+  project_id
+  api_token
+
+API methods
+
+isProjectUser(token)
