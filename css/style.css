@@ -28,7 +28,7 @@ body {
 }
 
 .card {
-    box-shadow: none;
+    box-shadow: none !important;
 }
 
 .card.to {
