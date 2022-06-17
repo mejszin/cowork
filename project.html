@@ -28,7 +28,7 @@
             getProjectItems(project_id).then(items => {
                 Object.keys(items).forEach(id => {
                     console.log(items[id]);
-                    renderTextCard(items[id].props);
+                    renderTextCard(items[id].props, items[id].author.id == user_id);
                     var card_list = document.getElementById('card-list');
                     card_list.scrollTop = card_list.scrollHeight;
                 });
