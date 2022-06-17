@@ -25,7 +25,7 @@
     </div>
     <script>
         async function renderProjectItems() {
-            getProjectItems().then(items => {
+            getProjectItems(project_id).then(items => {
                 for (var i = 0; i < items.length; i++) {
                     renderTextCard(items[i].props);
                     var card_list = document.getElementById('card-list');
@@ -43,7 +43,8 @@
                 )
             }, 
             () => console.log('Token error')
-        );    </script>
+        );
+    </script>
 </body>
 
 </html>
