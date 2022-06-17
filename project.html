@@ -22,15 +22,16 @@
         </div>
     </div>
     <script>
-        renderTextCard({ body: "Test card!" });
-        renderImageCard({ src: "https://machin.dev/images/drawings/standing_whiteboard.jpg", alt: "Placeholder" });
-        renderTextCard({ body: "Test card being sent from me!", style: "to" });
-        renderTextCard({ body: "Maybe this is a response", style: "from" });
-        renderTextCard({ body: "Test card!", style: "to" });
-        renderTextCard({ body: "Test card! My name is Louis and guess what...\nSome more text aswell! Let me send some more, it might wrap to the next line.", style: "to" });
-        renderTextCard({ body: "Test card!", style: "from" });
-        var card_list = document.getElementById('card-list');
-        card_list.scrollTop = card_list.scrollHeight;
+        async function renderProjectItems() {
+            getProjectItems().then(items => {
+                for (var i = 0; i < items.length; i++) {
+                    renderTextCard(items[i].props);
+                    var card_list = document.getElementById('card-list');
+                    card_list.scrollTop = card_list.scrollHeight;
+                }
+            });
+        }
+        assertToken(null, () => renderProjectItems(), () => console.log('Error'));
     </script>
 </body>
 
