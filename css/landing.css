@@ -6,6 +6,7 @@ body {
     overflow: hidden;
     align-items: center;
     justify-content: center;
+    user-select: none;
 }
 
 body > div {
@@ -28,4 +29,12 @@ input, button {
     border: 1px solid black;
     text-align: center;
     font-family: monospace;
+}
+
+button.submit {
+    background-color: #F7A0C1;
+}
+
+button.submit:hover {
+    background-color: #dd94b0;
 }

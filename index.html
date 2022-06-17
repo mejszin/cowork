@@ -6,12 +6,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="./css/landing.css" />
+    <script src="./lib/authenticate.js"></script>
 </head>
 
 <script>
+    assertToken(null, (t) => redirect(`/project.html?t=${t}`))
     function onSubmit() {
         var token = document.getElementById('token-input').value;
-        console.log(token);
+        assertToken(token, (t) => redirect(`/project.html?t=${t}`))
     }
 </script>
 
@@ -19,7 +21,7 @@
     <div>
         <img src="rocket.png">
         <input id="token-input" placeholder="Your API token"/>
-        <button onclick="onSubmit()">Submit</button>
+        <button class="submit" onclick="onSubmit()">Submit</button>
         <button onclick="window.location.href = './register.html'">New User</button>
     </div>
 </body>

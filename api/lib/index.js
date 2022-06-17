@@ -110,6 +110,17 @@ app.get('/ping', (req, res) => {
     res.status(200).send('Pong!');
 });
 
+app.get('/user/get', (req, res) => {
+    const { token } = req.query;
+    if (methods.isToken(token)) {
+        // Success
+        res.status(200).send(user_data[token]);
+    } else {
+        // Bad request
+        res.status(400).send();
+    }
+})
+
 app.get('/user/new', (req, res) => {
     const { alias } = req.query;
     if (alias != undefined) {
