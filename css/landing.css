@@ -24,17 +24,6 @@ img {
 input, button {
     width: 160px;
     margin-bottom: 16px;
-    padding: 4px 0;
-    border-radius: 8px;
-    border: 1px solid black;
     text-align: center;
     font-family: monospace;
-}
-
-button.submit {
-    background-color: #F7A0C1;
-}
-
-button.submit:hover {
-    background-color: #dd94b0;
 }
