@@ -9,18 +9,18 @@
 </head>
 
 <script>
-    function onSubmit() {
-        var token = document.getElementById('token-input').value;
-        console.log(token);
+    function onCreate() {
+        var alias = document.getElementById('alias-input').value;
+        alert(alias);
     }
 </script>
 
 <body>
     <div>
         <img src="rocket.png">
-        <input id="token-input" placeholder="Your API token"/>
-        <button onclick="onSubmit()">Submit</button>
-        <button onclick="window.location.href = './register.html'">New User</button>
+        <input id="alias-input" placeholder="Your alias"/>
+        <button onClick="onCreate()">Submit</button>
+        <button onClick="window.location.href = '/'">Back</button>
     </div>
 </body>
 
