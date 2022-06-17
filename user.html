@@ -20,10 +20,16 @@
     </div>
     <script>
         async function renderUserProjects(token) {
+            var card_list = document.getElementById('card-list');
+            var button;
             getUserProjects().then(projects => {
                 for (var i = 0; i < projects.length; i++) {
                     getProject(projects[i]).then(project => {
                         console.log(project);
+                        button = document.createElement('button');
+                        button.innerText = project.alias;
+                        button.onClick = redirect(`/project.html?&t=${token}&p=${project_id}`);
+                        card_list.appendChild(button);
                     })
                 }
             });
