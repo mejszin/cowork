@@ -28,7 +28,7 @@
                         console.log(project);
                         button = document.createElement('button');
                         button.innerText = project.alias;
-                        button.onClick = redirect(`/project.html?&t=${token}&p=${project.id}`);
+                        button.onClick = () => { redirect(`/project.html?&t=${token}&p=${project.id}`) };
                         card_list.appendChild(button);
                     })
                 }
