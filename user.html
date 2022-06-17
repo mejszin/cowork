@@ -17,6 +17,7 @@
     }
 
     #card-list {
+        display: flex;
         height: 100vh;
         align-items: center;
     }
@@ -37,7 +38,7 @@
                     getProject(projects[i]).then(project => {
                         console.log(project);
                         button = document.createElement('button');
-                        button.classList.add('button', 'block');
+                        button.classList.add('button', 'is-primary');
                         button.innerText = project.alias;
                         button.onClick = () => { redirect(`/project.html?&t=${token}&p=${project.id}`) };
                         card_list.appendChild(button);
