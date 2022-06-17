@@ -21,8 +21,8 @@
     <script>
         async function renderUserProjects(token) {
             getUserProjects().then(projects => {
-                for (var project_id in projects) {
-                    console.log(project_id);
+                for (var i = 0; i < projects.length; i++) {
+                    console.log(projects[i]);
                 }
             });
         }
