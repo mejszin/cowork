@@ -52,13 +52,36 @@
                 </div>
                 <div id="card-list" class="py-2"></div>
                 <div id="footer" class="p-4">
-                    <textarea id="text-input" class="textarea" rows="1" onkeydown="onKeyDown(event, (props) => { setProjectItem(props) })" onkeyup="onKeyUp(event)"></textarea>
+                    <textarea id="text-input" class="textarea" rows="1" onkeydown="onKeyDown(event)" onkeyup="onKeyUp(event)"></textarea>
                 </div>
             </div>
         </div>
     </div>
     <script>
         changeState('chat');
+
+        function onKeyUp(event) {
+            if ((event.keyCode == 13) && (event.shiftKey == false)) {
+                document.getElementById('text-input').value = '';
+            }
+        }
+
+        function onKeyDown(event) {
+            if ((event.keyCode == 13) && (event.shiftKey == false)) {
+                var input = document.getElementById('text-input');
+                if (input.value.indexOf('/image') == 0) {
+                    // Send image item
+                    var url = input.value.split(' ')[1];
+                    var props = { type: 'image', src: url };
+                    setProjectItem(props);
+                    return
+                }
+                // Send text item
+                var props = { type: 'text', body: input.value };
+                setProjectItem(props);
+                return
+            }
+        }
 
         async function renderProjectItems() {
             getProjectItems(project_id).then(items => {
