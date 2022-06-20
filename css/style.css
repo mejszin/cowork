@@ -11,6 +11,10 @@ body {
     min-height: 100vh;
 }
 
+.column {
+    min-height: 100vh;
+}
+
 #vertical-grid {
     display: grid;
     width: 100%;
