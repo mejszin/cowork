@@ -51,16 +51,29 @@ body {
 
 .card {
     box-shadow: none !important;
+    width: max-content !important;
 }
 
-.card.to {
+.card-wrap.to {
+    display: flex;
+    width: 100%;
+    margin: 0;
+    padding-left: 48px;
+}
+
+.card-wrap.to .card {
     background-color: #F3F3F3;
-    margin-left: 48px !important;
 }
 
-.card.from{
+.card-wrap.from {
+    display: flex;
+    width: 100%;
+    margin: 0;
+    padding-right: 48px;
+}
+
+.card-wrap.from .card {
     background-color: #ECF2FE;
-    margin-right: 48px !important;
 }
 
 .is-inactive span.icon {
