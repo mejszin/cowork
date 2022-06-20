@@ -18,12 +18,20 @@ body > div {
 img {
     width: 33vw;
     max-width: 240px;
-    margin-bottom: 32px;
+    padding-bottom: 64px;
+    filter: grayscale() opacity(0.5);
 }
 
-input, button {
-    width: 160px;
+input {
+    min-width: 240px !important;
+    max-width: 240px !important;
     margin-bottom: 16px;
     text-align: center;
     font-family: monospace;
+    /*border: 1px solid #F64087 !important;*/
+}
+
+.buttons {
+    justify-content: flex-end;
+    min-width: 240px;
 }
