@@ -13,6 +13,7 @@
     <script src="./lib/api.js"></script>
     <script src="./lib/render.js"></script>
     <script src="./lib/state.js"></script>
+    <script src="./lib/input.js"></script>
 </head>
 
 <style>
@@ -51,13 +52,14 @@
                 </div>
                 <div id="card-list" class="py-2"></div>
                 <div id="footer" class="p-4">
-                    <textarea class="textarea" rows="1"></textarea>
+                    <textarea id="text-input" class="textarea" rows="1" onkeydown="onKeyDown(event)" onkeyup="onKeyUp(event)"></textarea>
                 </div>
             </div>
         </div>
     </div>
     <script>
         changeState('chat');
+
         async function renderProjectItems() {
             getProjectItems(project_id).then(items => {
                 Object.keys(items).forEach(id => {
