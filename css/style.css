@@ -62,3 +62,7 @@ body {
     background-color: #ECF2FE;
     margin-right: 48px !important;
 }
+
+.is-inactive span.icon {
+    margin-right: 0 !important;
+}
