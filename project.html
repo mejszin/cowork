@@ -73,11 +73,13 @@
                     // Send image item
                     var url = input.value.split(' ')[1];
                     var props = { type: 'image', src: url };
+                    console.log(props);
                     setProjectItem(props);
                     return
                 }
                 // Send text item
                 var props = { type: 'text', body: input.value };
+                console.log(props);
                 setProjectItem(props);
                 return
             }
