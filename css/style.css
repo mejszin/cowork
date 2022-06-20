@@ -46,7 +46,8 @@ body {
     height: 100%;
     flex-direction: column;
     overflow-y: scroll;
-    user-select: all;
+    user-select: auto;
+    background-color: white;
     border-left: 1px solid #DBDBDB;
     border-right: 1px solid #DBDBDB;
     border-bottom: 1px solid #DBDBDB;
@@ -70,11 +71,14 @@ body {
     width: max-content !important;
 }
 
-.card-wrap.to {
+.card-wrap {
     display: flex;
-    justify-content: flex-end;
     width: 100%;
     margin: 0;
+}
+
+.card-wrap.to {
+    justify-content: flex-end;
     padding-left: 48px;
 }
 
@@ -83,10 +87,7 @@ body {
 }
 
 .card-wrap.from {
-    display: flex;
     justify-content: flex-start;
-    width: 100%;
-    margin: 0;
     padding-right: 48px;
 }
 
