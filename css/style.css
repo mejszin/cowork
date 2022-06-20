@@ -20,7 +20,8 @@ body {
     width: 100%;
     min-height: 100vh;
     max-height: 100vh;
-    grid-template-rows: 64px 1fr 96px;
+    grid-template-rows: auto 1fr 96px;
+    grid-gap: 0
 }
 
 #header {
@@ -29,12 +30,27 @@ body {
     height: 100%;
 }
 
+#header a:hover {
+    background-color: inherit !important;
+    border-bottom: 1px solid white !important;
+    color: #DBDBDB;
+}
+
+#header a > span {
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
 #card-list {
     display: flex;
-    width: 100%;
     height: 100%;
     flex-direction: column;
     overflow-y: scroll;
+    user-select: all;
+    border-left: 1px solid #DBDBDB;
+    border-right: 1px solid #DBDBDB;
+    border-bottom: 1px solid #DBDBDB;
+    margin: 0 16px;
 }
 
 #footer {
