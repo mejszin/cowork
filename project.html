@@ -52,7 +52,7 @@
                 </div>
                 <div id="card-list" class="py-2"></div>
                 <div id="footer" class="p-4">
-                    <textarea id="text-input" class="textarea" rows="1" onkeydown="onKeyDown(event)" onkeyup="onKeyUp(event)"></textarea>
+                    <textarea id="text-input" class="textarea" rows="1" onkeydown="onKeyDown(event, (props) => { setProjectItem(props) })" onkeyup="onKeyUp(event)"></textarea>
                 </div>
             </div>
         </div>
