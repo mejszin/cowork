@@ -77,6 +77,18 @@ body {
     margin: 0;
 }
 
+/* System */
+
+.card-wrap.system {
+    justify-content: center;
+}
+
+.card-wrap.system .card {
+    background-color: #c9c9c9;
+}
+
+/* To */
+
 .card-wrap.to {
     justify-content: flex-end;
     padding-left: 48px;
@@ -85,6 +97,8 @@ body {
 .card-wrap.to .card {
     background-color: #F3F3F3;
 }
+
+/* From */
 
 .card-wrap.from {
     justify-content: flex-start;
